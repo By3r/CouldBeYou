@@ -17,17 +17,20 @@ public class Interactor : MonoBehaviour
     [SerializeField] private bool boolStateOnEntry;
     [SerializeField] private bool boolStateOnExit;
     [SerializeField] private bool wantToChangeScenes;
+    [SerializeField] private bool relyOnTrigger;
+    [SerializeField] private bool getRidOfCollider;
 
     [SerializeField] private Animator animator;
 
+    private Collider2D colliderr;
     private bool playerInteracted = false;
     private bool playerInRange;
     #endregion
 
     private void Reset()
     {
-        var collider = GetComponent<Collider2D>();
-        collider.isTrigger = true;
+        colliderr = GetComponent<Collider2D>();
+        colliderr.isTrigger = true;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -38,6 +41,14 @@ public class Interactor : MonoBehaviour
             if (boolToControl != null && animator != null)
             {
                 animator.SetBool(boolToControl, boolStateOnEntry);
+            }
+            if (relyOnTrigger)
+            {
+                OnInteract?.Invoke();
+                if (getRidOfCollider)
+                {
+                    colliderr.enabled = false;
+                }
             }
         }
     }

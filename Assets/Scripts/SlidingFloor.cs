@@ -20,7 +20,7 @@ public class SlidiingFloor : MonoBehaviour
     [Tooltip("Vertical thickness of the sensor box that sits just above the floor's top.")]
     public float sensorHeight = 0.12f;
 
-    [Tooltip("How far above the collider top to place the sensor (prevents self-overlap).")]
+    [Tooltip("How far above the colliderr top to place the sensor (prevents self-overlap).")]
     public float sensorOffset = 0.02f;
 
     [Tooltip("Which layers can contain targets. Keep this to just the Player layer if possible.")]
