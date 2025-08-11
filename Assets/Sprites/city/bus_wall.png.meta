@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: b6283a504198f4a4db12f941e15daf2a
+guid: 73735ecb0fbb21b43bdb3feab735ea31
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3859238746032586196
-    second: supermarket_0
+      213: -9143386381403430829
+    second: bus_wall_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -46,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -72,10 +72,10 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 4096
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: supermarket_0
+      name: bus_wall_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 13524
-        height: 1404
+        x: 89
+        y: 143
+        width: 974
+        height: 380
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -114,8 +114,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c22cd4fbeca317ac0800000000000000
-      internalID: -3859238746032586196
+      spriteID: 350ed44a78a2c1180800000000000000
+      internalID: -9143386381403430829
       vertices: []
       indices: 
       edges: []
@@ -123,15 +123,14 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      supermarket_0: -3859238746032586196
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

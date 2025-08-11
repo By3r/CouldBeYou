@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 3acf3e0fdab9f674398b773c10094365
+guid: 899a135b59c73ad499ba8858a2b49aad
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4188821238159264711
-    second: city end_0
+      213: -7605807540971727951
+    second: liftgroundfloor_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -84,46 +84,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
     buildTarget: Standalone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: iPhone
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -139,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: city end_0
+      name: liftgroundfloor_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1904
-        height: 920
+        width: 415
+        height: 85
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -153,8 +114,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7cb481809bea12a30800000000000000
-      internalID: 4188821238159264711
+      spriteID: 1b3946ab65eb27690800000000000000
+      internalID: -7605807540971727951
       vertices: []
       indices: 
       edges: []
@@ -170,7 +131,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      city end_0: 4188821238159264711
+      liftgroundfloor_0: -7605807540971727951
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

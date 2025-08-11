@@ -12,13 +12,13 @@ EditorBuildSettings:
     path: Assets/Scenes/Apartment.unity
     guid: 266d722b26ae60042b0e099e0d86ad06
   - enabled: 1
-    path: Assets/Scenes/City.unity
+    path: Assets/Scenes/BusOne.unity
     guid: 20d08b2e7beee1440a61f3a125a93266
   - enabled: 1
-    path: Assets/Scenes/CityWalkable.unity
+    path: Assets/Scenes/SuperMarket.unity
     guid: c4e31d28889cb264cb5bd9c0018a66f1
   - enabled: 1
-    path: Assets/Scenes/Supermarket.unity
-    guid: 01e50ab507558cc44870c4270fd58fcb
+    path: Assets/Scenes/Restaurant.unity
+    guid: d801b32d11941e845bba90b3862c48f8
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0

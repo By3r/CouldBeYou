@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: b6283a504198f4a4db12f941e15daf2a
+guid: 7889fb501cdb88f40a1cce31f23b31bd
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3859238746032586196
-    second: supermarket_0
+      213: -2917795296415379658
+    second: MC_Idle_0
+  - first:
+      213: -7724441180785323211
+    second: MC_Idle_1
+  - first:
+      213: -432137160559841275
+    second: MC_Idle_2
+  - first:
+      213: -1896584886585014848
+    second: MC_Idle_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +55,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -100,13 +109,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: supermarket_0
+      name: MC_Idle_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 4
         y: 0
-        width: 13524
-        height: 1404
+        width: 36
+        height: 103
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -114,8 +123,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c22cd4fbeca317ac0800000000000000
-      internalID: -3859238746032586196
+      spriteID: 63f0bd513a8e187d0800000000000000
+      internalID: -2917795296415379658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_Idle_1
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 0
+        width: 36
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53354e20ca54dc490800000000000000
+      internalID: -7724441180785323211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_Idle_2
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 0
+        width: 36
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 500b592ca8db00af0800000000000000
+      internalID: -432137160559841275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_Idle_3
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 0
+        width: 36
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c5c9bc181afda5e0800000000000000
+      internalID: -1896584886585014848
       vertices: []
       indices: 
       edges: []
@@ -123,7 +195,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -131,7 +203,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      supermarket_0: -3859238746032586196
+      MC_Idle_0: -2917795296415379658
+      MC_Idle_1: -7724441180785323211
+      MC_Idle_2: -432137160559841275
+      MC_Idle_3: -1896584886585014848
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
