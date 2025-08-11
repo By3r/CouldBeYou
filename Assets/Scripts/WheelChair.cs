@@ -7,10 +7,10 @@ namespace Interactibles.WheelChairs
     {
         #region Variables
         [SerializeField] private float speedMultiplier = 0.3f;
-
+        [SerializeField] private GameObject dialogueImage;
         private bool isPickedUp;
-        private GameObject playerInRange;  
-        private GameObject carrier;        
+        private GameObject playerInRange;
+        private GameObject carrier;
         private Transform originalParent;
         private Vector3 dropPosition;
         #endregion
@@ -38,14 +38,15 @@ namespace Interactibles.WheelChairs
 
         private void Update()
         {
-            if (!isPickedUp
-                && playerInRange != null
-                && (Input.GetKeyDown(KeyCode.F) || Input.GetKeyDown(KeyCode.JoystickButton1)))
+            if (!isPickedUp && playerInRange != null && (Input.GetKeyDown(KeyCode.F) || Input.GetKeyDown(KeyCode.JoystickButton1)))
             {
                 PickUp(playerInRange);
+                if (dialogueImage is not null && dialogueImage.activeSelf == true)
+                {
+                    dialogueImage.SetActive(false);
+                }
             }
-            else if (isPickedUp
-                && (Input.GetKeyDown(KeyCode.F) || Input.GetKeyDown(KeyCode.JoystickButton1)))
+            else if (isPickedUp && (Input.GetKeyDown(KeyCode.F) || Input.GetKeyDown(KeyCode.JoystickButton1)))
             {
                 Drop();
             }

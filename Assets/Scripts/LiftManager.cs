@@ -15,10 +15,12 @@ namespace Interactibles.Lift
         private void Awake()
         {
             if (elevatorAnimator != null)
+            {
                 elevatorIsUp = elevatorAnimator.GetBool("isUp");
+            }
         }
 
-        private void OnTriggerEnter2D(Collider2D other)
+        public void OnTriggerEnter2D(Collider2D other)
         {
             if (!other.CompareTag("Player")) return;
             if (wheelchair == null || elevatorAnimator == null)
@@ -28,11 +30,13 @@ namespace Interactibles.Lift
             }
 
             if (wheelchair.transform.parent != other.transform)
+            {
                 return;
+            }
 
-            elevatorIsUp = !elevatorIsUp;   
+            elevatorIsUp = !elevatorIsUp;
 
-            elevatorAnimator.SetBool("isUp", elevatorIsUp); 
+            elevatorAnimator.SetBool("isUp", elevatorIsUp);
         }
     }
 }
