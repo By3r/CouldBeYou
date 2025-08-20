@@ -27,5 +27,5 @@ public class DialogueSequenceSO : ScriptableObject
         }
         if (fallbackDuration <= 0f) fallbackDuration = 0.1f;
     }
-#endifS
+#endif
 }

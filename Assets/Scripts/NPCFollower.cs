@@ -1,3 +1,4 @@
+using NUnit.Framework.Internal;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
@@ -7,6 +8,8 @@ public class NPCFollower : MonoBehaviour
     [Header("Target")]
     [Tooltip("Player transform. If left empty, will try to find GameObject tagged 'Player'.")]
     [SerializeField] private Transform target;
+    [SerializeField] private Transform player;
+    [SerializeField] private Transform selfTarget;
 
     [Header("Movement")]
     [Tooltip("Units per second while following.")]
@@ -29,6 +32,7 @@ public class NPCFollower : MonoBehaviour
     [Tooltip("Tick this if your base art faces LEFT. Untick if art faces RIGHT.")]
     [SerializeField] private bool baseArtFacesLeft = true;
 
+    private bool followPlayer = false;
     private Rigidbody2D rb;
     private Vector2 lastNonZeroDir = Vector2.right;
 
@@ -46,19 +50,30 @@ public class NPCFollower : MonoBehaviour
 
     private void Start()
     {
-        if (target == null)
+        if (target == null && followPlayer == true)
         {
-            var playerGO = GameObject.FindGameObjectWithTag("Player");
-            if (playerGO != null) target = playerGO.transform;
+            target = player;
+        }
+        if (followPlayer == false)
+        {
+            selfTarget.position = this.gameObject.transform.position;
         }
     }
 
     private void FixedUpdate()
     {
-        if (target == null)
+        if (target == null && followPlayer == false)
         {
+            target = selfTarget;
             rb.velocity = Vector2.zero;
             return;
+        }
+        else if (followPlayer)
+        {
+            if (player != null)
+            {
+                target = player;
+            }
         }
 
         Vector2 desiredPos = (Vector2)target.position;
@@ -85,5 +100,10 @@ public class NPCFollower : MonoBehaviour
             if (rb.velocity.sqrMagnitude > 0.0001f)
                 lastNonZeroDir = rb.velocity;
         }
+    }
+
+    public void MakeNPCFollowPlayer(bool shouldFollow)
+    {
+        followPlayer = shouldFollow;
     }
 }

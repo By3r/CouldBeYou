@@ -1336,6 +1336,37 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.99, y: 1}
   m_EdgeRadius: 0
+--- !u!1 &303887912
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 303887913}
+  m_Layer: 0
+  m_Name: pos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &303887913
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 303887912}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.19413824, z: -0, w: 0.98097426}
+  m_LocalPosition: {x: 75.88, y: -1.46, z: 31.4}
+  m_LocalScale: {x: 3.7782497, y: 3.7782497, z: 0}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &339743980
 GameObject:
   m_ObjectHideFlags: 0
@@ -1647,7 +1678,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &695448567
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1886,11 +1917,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d09a513c82a7679409d350f22253fecf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 1723817159}
+  target: {fileID: 0}
+  player: {fileID: 1723817159}
+  selfTarget: {fileID: 303887913}
   moveSpeed: 3.5
   maxAcceleration: 12
-  xOffset: 1.5
-  yOffset: 0
+  xOffset: 3
+  yOffset: 1
   spriteRenderer: {fileID: 695448570}
   baseArtFacesLeft: 1
 --- !u!50 &695448573
@@ -3646,7 +3679,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1807506185
 Transform:
   m_ObjectHideFlags: 0
@@ -4319,6 +4352,7 @@ SceneRoots:
   - {fileID: 85122127}
   - {fileID: 1807506185}
   - {fileID: 1021059387}
+  - {fileID: 303887913}
   - {fileID: 695448571}
   - {fileID: 50225527}
   - {fileID: 1078238459}

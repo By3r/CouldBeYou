@@ -657,6 +657,8 @@ MonoBehaviour:
   boolStateOnEntry: 0
   boolStateOnExit: 0
   wantToChangeScenes: 1
+  relyOnTrigger: 0
+  getRidOfCollider: 0
   animator: {fileID: 289751745}
 --- !u!1 &290160345
 GameObject:
@@ -1204,6 +1206,8 @@ MonoBehaviour:
   boolStateOnEntry: 0
   boolStateOnExit: 0
   wantToChangeScenes: 0
+  relyOnTrigger: 0
+  getRidOfCollider: 0
   animator: {fileID: 0}
 --- !u!61 &434127472
 BoxCollider2D:
@@ -2104,6 +2108,8 @@ MonoBehaviour:
   boolStateOnEntry: 1
   boolStateOnExit: 1
   wantToChangeScenes: 0
+  relyOnTrigger: 0
+  getRidOfCollider: 0
   animator: {fileID: 289751745}
 --- !u!1 &825480798
 GameObject:
@@ -3352,9 +3358,41 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2847530056995466202, guid: fe1096d18c6572e4495dc40125061dc6, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.0763776
+      objectReference: {fileID: 0}
+    - target: {fileID: 2847530056995466202, guid: fe1096d18c6572e4495dc40125061dc6, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.0763776
+      objectReference: {fileID: 0}
+    - target: {fileID: 2847530056995466202, guid: fe1096d18c6572e4495dc40125061dc6, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.271074
+      objectReference: {fileID: 0}
+    - target: {fileID: 2928908943123210396, guid: fe1096d18c6572e4495dc40125061dc6, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3209700472527711306, guid: fe1096d18c6572e4495dc40125061dc6, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -891089818640788519, guid: 4a69073b81c7cbc42b3c5b6b048d5c01, type: 3}
+    - target: {fileID: 3700901682542019884, guid: fe1096d18c6572e4495dc40125061dc6, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4233065930453257908, guid: fe1096d18c6572e4495dc40125061dc6, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6236396098745705020, guid: fe1096d18c6572e4495dc40125061dc6, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 6236396098745705020, guid: fe1096d18c6572e4495dc40125061dc6, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7120168531437081933, guid: fe1096d18c6572e4495dc40125061dc6, type: 3}
       propertyPath: m_Color.b

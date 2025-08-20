@@ -7,6 +7,7 @@ using UnityEngine.Events;
 /// - Disables specified behaviours (e.g., player movement/input)
 /// - Plays a timed sequence controlling NPC and Player SpriteRenderers
 /// - Restores everything when done
+/// - Allows toggling whether this NPC can currently be interacted with
 /// </summary>
 [RequireComponent(typeof(Collider2D))]
 public class NPCInteractor : Interactor
@@ -34,6 +35,10 @@ public class NPCInteractor : Interactor
     [Tooltip("Prevent re-trigger while a sequence is already playing.")]
     [SerializeField] private bool blockReentryWhilePlaying = true;
 
+    [Header("Interaction Control")]
+    [Tooltip("If false, the player cannot interact with this NPC.")]
+    [SerializeField] private bool canInteract = true;
+
     private Sprite _npcOriginalSprite;
     private Sprite _playerOriginalSprite;
     private bool _isPlaying;
@@ -51,12 +56,22 @@ public class NPCInteractor : Interactor
             OnInteract.RemoveListener(HandleInteract);
     }
 
+    /// <summary>
+    /// Public setter you can call from code to enable/disable interaction.
+    /// </summary>
+    public void SetCanInteract(bool value)
+    {
+        canInteract = value;
+    }
+
     private void HandleInteract()
     {
-        if (sequence == null)
-        {
+        // Block if disabled
+        if (!canInteract)
             return;
-        }
+
+        if (sequence == null)
+            return;
 
         if (_isPlaying && blockReentryWhilePlaying)
             return;
@@ -73,7 +88,6 @@ public class NPCInteractor : Interactor
         if (playerRenderer != null) _playerOriginalSprite = playerRenderer.sprite;
 
         SetScriptsEnabled(false);
-
         OnDialogueStarted?.Invoke();
 
         int steps = Mathf.Min(
