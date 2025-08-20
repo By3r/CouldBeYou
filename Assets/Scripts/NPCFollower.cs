@@ -6,62 +6,80 @@ public class NPCFollower : MonoBehaviour
 {
     #region Variables
     [Header("Target")]
+    [Tooltip("Default player target (can be swapped at runtime).")]
     [SerializeField] private Transform player;
+
+    [SerializeField] private Transform currentTarget;
 
     [Header("Movement")]
     [SerializeField] private float moveSpeed = 3.5f;
-
     [SerializeField] private float maxAcceleration = 12f;
-
     [SerializeField] private float arriveThreshold = 0.05f;
-
     [SerializeField] private float slowRadius = 0.5f;
 
+    [Header("Offsets")]
     [SerializeField] private float xOffset = 1.5f;
     [SerializeField] private float yOffset = 0f;
+    [SerializeField] private bool offsetOnlyForPlayer = true;
 
+    [Header("Rendering")]
     [SerializeField] private SpriteRenderer spriteRenderer;
-
     [SerializeField] private bool baseArtFacesLeft = true;
 
-    private bool followPlayer = false;
+    [Header("Behaviour")]
+    [SerializeField] private bool followPlayer = false;
+
+    [Header("Safety / Debug")]
+    [SerializeField] private bool clearVelocityOnRetarget = true;
+
+    [SerializeField] private float runawayDistanceFromHome = 0f;
+
     private Rigidbody2D rb;
     private Vector2 lastNonZeroDir = Vector2.right;
-
     private Vector2 homePosition;
+    private Vector2 lastTargetPoint;
     #endregion
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-
-        if (spriteRenderer == null)
-            spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        if (spriteRenderer == null) spriteRenderer = GetComponentInChildren<SpriteRenderer>();
 
         rb.interpolation = RigidbodyInterpolation2D.Interpolate;
         rb.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
         rb.freezeRotation = true;
 
         homePosition = rb.position;
+        currentTarget = player; 
     }
 
     private void FixedUpdate()
     {
+        SanitizeTarget();
+
         Vector2 targetPoint;
-
-        if (followPlayer && player != null)
+        if (followPlayer && currentTarget != null)
         {
-            Vector2 rawTarget = player.position;
-            float sidePos = (rb.position.x < player.position.x) ? -1f : 1f;
-            Vector2 offset = new Vector2(xOffset * sidePos, yOffset);
-            targetPoint = rawTarget + offset;
+            bool useOffset = !offsetOnlyForPlayer || currentTarget == player;
 
-            rb.isKinematic = false;
+            if (useOffset)
+            {
+                Vector2 rawTarget = currentTarget.position;
+                float sidePos = (rb.position.x < currentTarget.position.x) ? -1f : 1f;
+                Vector2 offset = new Vector2(xOffset * sidePos, yOffset);
+                targetPoint = rawTarget + offset;
+            }
+            else
+            {
+                targetPoint = currentTarget.position;
+            }
+
+            rb.isKinematic = false; 
         }
         else
         {
             targetPoint = homePosition;
-            rb.isKinematic = true;
+            rb.isKinematic = true;  
             rb.velocity = Vector2.zero;
         }
 
@@ -77,7 +95,7 @@ public class NPCFollower : MonoBehaviour
             float speed = moveSpeed;
             if (distance < slowRadius)
             {
-                float factor = distance / slowRadius;
+                float factor = distance / slowRadius; 
                 speed *= factor;
             }
 
@@ -89,6 +107,20 @@ public class NPCFollower : MonoBehaviour
                 rb.velocity = desiredVel;
         }
 
+        if (runawayDistanceFromHome > 0f)
+        {
+            float fromHome = Vector2.Distance(rb.position, homePosition);
+            if (fromHome > runawayDistanceFromHome)
+            {
+                rb.position = homePosition;
+                rb.velocity = Vector2.zero;
+                rb.isKinematic = true;
+                followPlayer = false;
+                currentTarget = player;
+                return;
+            }
+        }
+
         if (spriteRenderer != null)
         {
             float xVelocity = rb.velocity.x != 0 ? rb.velocity.x : lastNonZeroDir.x;
@@ -98,10 +130,82 @@ public class NPCFollower : MonoBehaviour
             if (rb.velocity.sqrMagnitude > 0.0001f)
                 lastNonZeroDir = rb.velocity;
         }
+
+        lastTargetPoint = targetPoint;
     }
 
     public void MakeNPCFollowPlayer(bool shouldFollow)
     {
         followPlayer = shouldFollow;
+        if (followPlayer && currentTarget == null) SetTargetTransform(player);
+    }
+
+    public void SetTarget(GameObject newTargetGO)
+    {
+        if (newTargetGO == null) { SetTargetTransform(player); return; }
+
+        if (newTargetGO.transform == transform)
+        {
+            return;
+        }
+
+        if (!newTargetGO.scene.IsValid())
+        {
+            return;
+        }
+
+        SetTargetTransform(newTargetGO.transform);
+    }
+
+    public void SetTargetTransform(Transform newTarget)
+    {
+        if (newTarget == transform)
+        {
+            return;
+        }
+
+        currentTarget = newTarget != null ? newTarget : player;
+        OnRetarget();
+    }
+
+    public void SetTargetToPlayer()
+    {
+        currentTarget = player;
+        OnRetarget();
+    }
+    public void SetHomeToCurrentPosition()
+    {
+        homePosition = rb.position;
+    }
+
+    private void OnRetarget()
+    {
+        if (clearVelocityOnRetarget)
+        {
+            rb.velocity = Vector2.zero;
+            if (followPlayer && currentTarget != null) rb.isKinematic = false;
+        }
+
+        if (currentTarget != null)
+        {
+            float dx = currentTarget.position.x - transform.position.x;
+            if (Mathf.Abs(dx) > 0.001f)
+                lastNonZeroDir = new Vector2(Mathf.Sign(dx), 0f);
+        }
+    }
+
+    private void SanitizeTarget()
+    {
+        if (currentTarget == null || (currentTarget.gameObject != null && !currentTarget.gameObject.activeInHierarchy))
+        {
+            if (followPlayer && player != null)
+            {
+                currentTarget = player;
+            }
+            else
+            {
+                currentTarget = null;
+            }
+        }
     }
 }

@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8f225f12a1ad774ca787b2adbc3a5d9, type: 3}
+  m_Name: Filler_Set
+  m_EditorClassIdentifier: 
+  npcSprites:
+  - {fileID: 2247877128472354489, guid: 0f1bab09dbcbb314a8047b7135ac43ab, type: 3}
+  - {fileID: 0}
+  - {fileID: -8773858262063567065, guid: 9d639540903d12e40ae83909b62a4ee8, type: 3}
+  - {fileID: 0}
+  playerSprites:
+  - {fileID: 0}
+  - {fileID: 2518675796550576110, guid: 67fbc16be3e0949419c2ede4677ba060, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
+  durations:
+  - 1.5
+  - 1.5
+  - 1.5
+  - 0
+  fallbackDuration: 1

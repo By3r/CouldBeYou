@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8f225f12a1ad774ca787b2adbc3a5d9, type: 3}
+  m_Name: FourthSet_Dialogue
+  m_EditorClassIdentifier: 
+  npcSprites:
+  - {fileID: 7862876352636745932, guid: 21c4ccb358c84ee4383dbf405b444f0d, type: 3}
+  - {fileID: -7245553553233638232, guid: 5fa1339f7d689c9479ad554238477caa, type: 3}
+  - {fileID: 0}
+  - {fileID: 2518675796550576110, guid: d75546b512eed0b4488574d9027b2674, type: 3}
+  - {fileID: 0}
+  - {fileID: -7730055666969284678, guid: 441b21fcad5f94742a2a863e5d75fd4f, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
+  playerSprites:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 7862876352636745932, guid: 21c4ccb358c84ee4383dbf405b444f0d, type: 3}
+  - {fileID: 0}
+  - {fileID: 2518675796550576110, guid: 67fbc16be3e0949419c2ede4677ba060, type: 3}
+  - {fileID: 0}
+  - {fileID: 2009362702869007363, guid: 64d5ede95cfd57c468b34e0c371e49cf, type: 3}
+  - {fileID: 0}
+  durations:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  fallbackDuration: 1

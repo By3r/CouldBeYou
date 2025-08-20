@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8f225f12a1ad774ca787b2adbc3a5d9, type: 3}
+  m_Name: JudgySet
+  m_EditorClassIdentifier: 
+  npcSprites:
+  - {fileID: -6092501883190072741, guid: 948ffe12203e7404d8a464c62014e914, type: 3}
+  - {fileID: 0}
+  - {fileID: -7801369230052245177, guid: 288c5661dbb7aad4281588d48e390775, type: 3}
+  - {fileID: 0}
+  - {fileID: 5953602601863368544, guid: d5e982a3c854b7b498dfa24f14dd07e8, type: 3}
+  - {fileID: 0}
+  playerSprites:
+  - {fileID: 0}
+  - {fileID: -4896423354960974725, guid: 3b382d2cb958c4746aab8c4ed6a2b8c5, type: 3}
+  - {fileID: 0}
+  - {fileID: 6876229526117458781, guid: e40ffbe523a4f134cae0f0eda149553d, type: 3}
+  - {fileID: 0}
+  - {fileID: -8852808338505895293, guid: fca700eb0db127d41b9e272c8b5a40e7, type: 3}
+  durations:
+  - 1.5
+  - 1.5
+  - 3
+  - 3
+  - 3
+  - 3
+  fallbackDuration: 1
