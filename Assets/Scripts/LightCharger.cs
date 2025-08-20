@@ -6,6 +6,8 @@ public class LightCharger : MonoBehaviour
     #region Variables
     [SerializeField] private string playerTag = "Player";
 
+    [SerializeField] private bool forRestaurant = false;
+
     [Header("Arrow Sprites")]
     [Tooltip("Sprite when the arrow becomes active.")]
     [SerializeField] private Sprite lightArrow;
@@ -137,7 +139,14 @@ public class LightCharger : MonoBehaviour
 
     private void LoadNextScene()
     {
-        SceneManager.LoadScene(3);
+        if (forRestaurant == false)
+        {
+            SceneManager.LoadScene(3);
+        }
+        else
+        {
+            SceneManager.LoadScene(5);
+        }
     }
     #endregion
 }

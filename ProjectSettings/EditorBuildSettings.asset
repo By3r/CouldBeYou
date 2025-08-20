@@ -18,6 +18,9 @@ EditorBuildSettings:
     path: Assets/Scenes/SuperMarket.unity
     guid: c4e31d28889cb264cb5bd9c0018a66f1
   - enabled: 1
+    path: Assets/Scenes/BusTwo.unity
+    guid: adc91ad1d262ac542802841c21bb5cc2
+  - enabled: 1
     path: Assets/Scenes/Restaurant.unity
     guid: d801b32d11941e845bba90b3862c48f8
   m_configObjects: {}

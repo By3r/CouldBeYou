@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8f225f12a1ad774ca787b2adbc3a5d9, type: 3}
+  m_Name: SecondSet
+  m_EditorClassIdentifier: 
+  npcSprites:
+  - {fileID: 5550868311927011784, guid: 377df7ed99c1fdb499803c3155c8305f, type: 3}
+  - {fileID: 0}
+  - {fileID: -5484327524462166772, guid: 9a499085a95229b4cb721937241e35eb, type: 3}
+  - {fileID: 0}
+  - {fileID: 8084361395219549968, guid: 3b41a3bfdbafe604d920e8ff5ea1495f, type: 3}
+  - {fileID: 0}
+  playerSprites:
+  - {fileID: 0}
+  - {fileID: -4452792164682601760, guid: 72796488f58e93a4db091ada4303b106, type: 3}
+  - {fileID: 0}
+  - {fileID: -3451237498367463563, guid: 570e3768d8e60dc4992460ec003aba8d, type: 3}
+  - {fileID: 0}
+  - {fileID: -5672360505682795587, guid: e0c37816462b7124cbf70f65bb70d2f3, type: 3}
+  durations:
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  fallbackDuration: 1
