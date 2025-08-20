@@ -27,10 +27,10 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: -5672360505682795587, guid: e0c37816462b7124cbf70f65bb70d2f3, type: 3}
   durations:
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
+  - 1.5
+  - 1.5
+  - 1.5
+  - 1.5
+  - 1.5
+  - 1.5
   fallbackDuration: 1

@@ -12,6 +12,7 @@ using UnityEngine.Events;
 [RequireComponent(typeof(Collider2D))]
 public class NPCInteractor : Interactor
 {
+    #region Variables
     [Header("Dialogue")]
     [SerializeField] private DialogueSequenceSO sequence;
 
@@ -43,6 +44,7 @@ public class NPCInteractor : Interactor
     private Sprite _playerOriginalSprite;
     private bool _isPlaying;
     private Coroutine _playRoutine;
+    #endregion
 
     private void OnEnable()
     {
@@ -66,7 +68,6 @@ public class NPCInteractor : Interactor
 
     private void HandleInteract()
     {
-        // Block if disabled
         if (!canInteract)
             return;
 

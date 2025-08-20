@@ -8,6 +8,8 @@ namespace Interactibles.WheelChairs
         #region Variables
         [SerializeField] private float speedMultiplier = 0.3f;
         [SerializeField] private GameObject dialogueImage;
+
+        private Rigidbody2D rb;
         private bool isPickedUp;
         private GameObject playerInRange;
         private GameObject carrier;
@@ -18,6 +20,7 @@ namespace Interactibles.WheelChairs
         private void Awake()
         {
             originalParent = transform.parent;
+            rb = GetComponent<Rigidbody2D>();
         }
 
         private void OnTriggerEnter2D(Collider2D other)
